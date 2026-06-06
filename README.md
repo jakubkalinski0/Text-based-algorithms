@@ -1,25 +1,25 @@
 # Text-based Algorithms
 
-Zbiór implementacji algorytmów i ćwiczeń z przetwarzania tekstu — od podstawowej analizy stringów, przez wyrażenia regularne i wyszukiwanie wzorców, po drzewa sufiksów i odległość edycyjną.
+A collection of text processing algorithms and exercises, from basic string analysis and regular expressions to pattern matching, suffix trees, and edit distance.
 
-## Struktura projektu
+## Project structure
 
 ```
-├── Lab1/   # Wprowadzenie — analiza tekstu, palindromy, anagramy
-├── Lab2/   # Wyrażenia regularne, DFA, parsowanie dokumentów
-├── Lab3/   # Wyszukiwanie wzorca w tekście
-├── Lab4/   # Zaawansowane wyszukiwanie i dopasowanie przybliżone
-├── Lab5/   # Drzewa sufiksów (algorytm Ukkonena)
-├── Lab6/   # Odległość edycyjna
+├── Lab1/   # Introduction: text analysis, palindromes, anagrams
+├── Lab2/   # Regular expressions, DFA, document parsing
+├── Lab3/   # Pattern matching in text
+├── Lab4/   # Advanced search and approximate matching
+├── Lab5/   # Suffix trees (Ukkonen's algorithm)
+├── Lab6/   # Edit distance
 └── requirements.txt
 ```
 
-## Wymagania
+## Requirements
 
 - Python 3.10+
-- [pytest](https://pytest.org/) (do uruchamiania testów)
+- [pytest](https://pytest.org/) (for running tests)
 
-## Instalacja
+## Installation
 
 ```bash
 python -m venv .venv
@@ -31,79 +31,79 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Uruchamianie testów
+## Running tests
 
-Z katalogu głównego repozytorium:
+From the repository root:
 
 ```bash
-# wszystkie testy (Lab2–Lab6)
+# all tests (Lab2 to Lab6)
 python -m pytest Lab2/tests Lab3/tests Lab4/tests Lab6/tests
 
-# pojedyncze laboratorium
+# single lab
 python -m pytest Lab3/tests -v
 ```
 
-Lab1 i Lab5 nie mają dedykowanych testów automatycznych — Lab5 zawiera skrypty porównawcze (`compare.py`, `suffix.py`).
+Lab1 and Lab5 do not have dedicated automated tests. Lab5 includes comparison scripts (`compare.py`, `suffix.py`).
 
-## Laboratoria
+## Labs
 
-### Lab1 — Wprowadzenie do przetwarzania tekstu
+### Lab1: Introduction to text processing
 
-| Plik | Opis |
-|------|------|
-| `Task1_Word_and_character_counter.py` | Liczenie słów, znaków, samogłosek i spółgłosek |
-| `Task2_Palindromes.py` | Sprawdzanie palindromów i budowanie najkrótszego palindromu |
-| `Task3_Character_frequency_analysis_and_anagram_checking.py` | Częstość znaków i sprawdzanie anagramów |
+| File | Description |
+|------|-------------|
+| `Task1_Word_and_character_counter.py` | Word, character, vowel, and consonant counting |
+| `Task2_Palindromes.py` | Palindrome checking and shortest palindrome construction |
+| `Task3_Character_frequency_analysis_and_anagram_checking.py` | Character frequency and anagram checking |
 
-### Lab2 — Wyrażenia regularne
+### Lab2: Regular expressions
 
-| Plik | Opis |
-|------|------|
-| `parse_publication.py` | Parsowanie referencji bibliograficznych |
-| `extract_links.py` | Ekstrakcja linków z kodu HTML |
-| `analyze_text_file.py` | Analiza pliku tekstowego (słowa, zdania, e-maile, daty) |
-| `build_dfa.py` | Budowa i symulacja automatu skończonego z wyrażeń regularnych |
+| File | Description |
+|------|-------------|
+| `parse_publication.py` | Bibliographic reference parsing |
+| `extract_links.py` | Link extraction from HTML |
+| `analyze_text_file.py` | Text file analysis (words, sentences, emails, dates) |
+| `build_dfa.py` | DFA construction and simulation from regular expressions |
 
-Szczegółowy opis zadań: [`Lab2/README.md`](Lab2/README.md).
+Detailed task descriptions: [`Lab2/README.md`](Lab2/README.md).
 
-### Lab3 — Wyszukiwanie wzorca
+### Lab3: Pattern matching
 
-| Algorytm | Plik |
-|----------|------|
-| Naiwny | `naive_pattern_matching.py` |
+| Algorithm | File |
+|-----------|------|
+| Naive | `naive_pattern_matching.py` |
 | Knuth-Morris-Pratt (KMP) | `kmp_algorithm.py` |
 | Boyer-Moore | `boyer_moore_algorithm.py` |
 | Rabin-Karp | `rabin_karp_algorithm.py` |
 | Z-algorithm | `z_algorithm.py` |
 
-### Lab4 — Zaawansowane wyszukiwanie
+### Lab4: Advanced search
 
-| Plik | Opis |
-|------|------|
-| `shift_or_algorithm.py` | Algorytm Shift-Or (dopasowanie bitowe) |
-| `aho_corasick_algorithm.py` | Wyszukiwanie wielu wzorców jednocześnie |
-| `levenshtein_distance.py` | Odległość Levenshteina |
-| `fuzzy_matching.py` | Dopasowanie rozmyte (Hamming, fuzzy Shift-Or) |
-| `two_dimensional_search.py` | Wyszukiwanie wzorca w macierzy 2D |
+| File | Description |
+|------|-------------|
+| `shift_or_algorithm.py` | Shift-Or algorithm (bit-parallel matching) |
+| `aho_corasick_algorithm.py` | Multi-pattern search |
+| `levenshtein_distance.py` | Levenshtein distance |
+| `fuzzy_matching.py` | Fuzzy matching (Hamming, fuzzy Shift-Or) |
+| `two_dimensional_search.py` | 2D pattern search in a matrix |
 
-### Lab5 — Drzewa sufiksów
+### Lab5: Suffix trees
 
-| Plik | Opis |
-|------|------|
-| `ukkonen.py` | Budowa drzewa sufiksów algorytmem Ukkonena |
-| `suffix.py` | Drzewo sufiksów z pomiarami wydajności |
-| `substring.py` | Wyszukiwanie podciągów i LCS na drzewie sufiksów |
-| `compare.py` | Porównanie algorytmów wyszukiwania wzorca |
+| File | Description |
+|------|-------------|
+| `ukkonen.py` | Suffix tree construction with Ukkonen's algorithm |
+| `suffix.py` | Suffix tree with performance benchmarks |
+| `substring.py` | Substring search and LCS on a suffix tree |
+| `compare.py` | Pattern matching algorithm comparison |
 
-### Lab6 — Odległość edycyjna
+### Lab6: Edit distance
 
-| Plik | Opis |
-|------|------|
-| `naive_edit_distance.py` | Naiwne obliczanie odległości edycyjnej |
-| `wagner_fischer.py` | Algorytm Wagnera-Fischera (programowanie dynamiczne) |
-| `allison.py` | Algorytm Allisonsa |
-| `nilsims.py` | Algorytm Nilsimsa |
+| File | Description |
+|------|-------------|
+| `naive_edit_distance.py` | Naive edit distance computation |
+| `wagner_fischer.py` | Wagner-Fischer algorithm (dynamic programming) |
+| `allison.py` | Allison's algorithm |
+| `nilsims.py` | Nilsims algorithm |
 
-## Licencja
+## License
 
-Projekt objęty licencją określoną w pliku [LICENSE](LICENSE).
+This project is licensed under the terms specified in [LICENSE](LICENSE).
